@@ -1,0 +1,352 @@
+/* ================================================================
+   Guía de estudio · Sociología — styles.css
+   ETAPA 2: identidad visual, tabla, fichas, flashcards, responsive
+   ================================================================ */
+
+/* ---------- 1. Variables y base ---------- */
+:root{
+  --fondo:#f4f6fb;
+  --panel:#ffffff;
+  --panel-2:#eef1f8;
+  --texto:#1b2233;
+  --texto-suave:#5a6478;
+  --borde:#e2e7f0;
+  --sombra:0 1px 2px rgba(16,24,40,.05), 0 8px 24px rgba(16,24,40,.06);
+  --marca:#4f46e5;
+  --ok:#16a34a;
+  --barra-fondo:rgba(255,255,255,.85);
+  --radio:14px;
+}
+
+html[data-tema="oscuro"]{
+  --fondo:#0d1220;
+  --panel:#161d2f;
+  --panel-2:#1d2540;
+  --texto:#e7ebf4;
+  --texto-suave:#9aa5bd;
+  --borde:#2a3352;
+  --sombra:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  --marca:#818cf8;
+  --ok:#4ade80;
+  --barra-fondo:rgba(13,18,32,.85);
+}
+
+/* Acento de color por autor (fichas, chips, flashcards, tabla) */
+[data-autor="marx"],[data-acento="marx"]{--acento:#e5484d;--acento-suave:rgba(229,72,77,.14)}
+[data-autor="weber"],[data-acento="weber"]{--acento:#3b82f6;--acento-suave:rgba(59,130,246,.14)}
+[data-autor="parsons"],[data-acento="parsons"]{--acento:#0d9488;--acento-suave:rgba(13,148,136,.14)}
+[data-autor="bourdieu"],[data-acento="bourdieu"]{--acento:#8b5cf6;--acento-suave:rgba(139,92,246,.14)}
+[data-autor="beck"],[data-acento="beck"]{--acento:#f59e0b;--acento-suave:rgba(245,158,11,.16)}
+[data-autor="aguirre"],[data-acento="aguirre"]{--acento:#ec4899;--acento-suave:rgba(236,72,153,.14)}
+[data-autor="castells"],[data-acento="castells"]{--acento:#06b6d4;--acento-suave:rgba(6,182,212,.14)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Segoe UI", ui-sans-serif, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:var(--fondo);
+  color:var(--texto);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+
+.salto{position:absolute;left:-9999px;top:0;z-index:100;background:var(--panel);color:var(--texto);padding:10px 16px;border-radius:0 0 10px 0;text-decoration:none;font-weight:700}
+.salto:focus{left:0}
+
+.contenedor{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- 2. Barra de navegación ---------- */
+.barra{
+  position:sticky;top:0;z-index:50;
+  background:var(--barra-fondo);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--borde);
+}
+.barra-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 24px}
+.logo{font-weight:800;text-decoration:none;color:var(--texto);font-size:1.05rem;white-space:nowrap}
+.nav{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.nav a{
+  text-decoration:none;color:var(--texto-suave);
+  font-size:.92rem;font-weight:600;
+  padding:7px 12px;border-radius:10px;transition:.15s;
+}
+.nav a:hover{color:var(--texto);background:var(--panel-2)}
+.nav a.activa{color:var(--marca);background:var(--panel-2)}
+.btn-tema{
+  border:1px solid var(--borde);background:var(--panel);
+  border-radius:10px;width:38px;height:38px;cursor:pointer;font-size:1rem;
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+}
+.btn-tema:hover{border-color:var(--marca)}
+
+/* ---------- 3. Portada (hero) ---------- */
+.hero{
+  padding:80px 0 64px;
+  border-bottom:1px solid var(--borde);
+  background:
+    radial-gradient(600px 300px at 15% 10%, rgba(79,70,229,.10), transparent 70%),
+    radial-gradient(600px 300px at 85% 15%, rgba(6,182,212,.10), transparent 70%),
+    var(--fondo);
+}
+.hero-eyebrow{
+  margin:0 0 10px;color:var(--marca);
+  font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+}
+.hero h1{
+  margin:0 0 16px;
+  font-size:clamp(2rem,5vw,3.1rem);
+  line-height:1.12;letter-spacing:-.02em;
+}
+.grad{
+  background:linear-gradient(90deg,var(--marca),#06b6d4);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{margin:0 0 28px;font-size:1.08rem;color:var(--texto-suave);max-width:64ch}
+.hero-stats{display:flex;gap:34px;flex-wrap:wrap;margin:0 0 26px}
+.hero-stats div{display:flex;flex-direction:column}
+.hero-stats strong{font-size:1.7rem;line-height:1.2}
+.hero-stats span{font-size:.85rem;color:var(--texto-suave)}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.hero-chip{
+  text-decoration:none;font-size:.85rem;font-weight:700;
+  color:var(--acento);background:var(--acento-suave);
+  padding:6px 14px;border-radius:999px;transition:.15s;
+}
+.hero-chip:hover{filter:brightness(.92);transform:translateY(-1px)}
+.hero-acciones{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- 4. Botones ---------- */
+.btn{
+  display:inline-block;font:inherit;cursor:pointer;text-align:center;
+  border-radius:12px;transition:.15s;text-decoration:none;
+}
+.btn-primario{
+  background:var(--marca);color:#fff;border:none;
+  padding:11px 22px;font-weight:700;
+}
+.btn-primario:hover{filter:brightness(1.1)}
+.btn-fantasma{
+  background:transparent;border:1px solid var(--borde);color:var(--texto-suave);
+  padding:10px 16px;font-size:.9rem;font-weight:600;
+}
+.btn-fantasma:hover{color:var(--marca);border-color:var(--marca)}
+.btn-circulo{
+  width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--borde);background:var(--panel);color:var(--texto);
+  font-size:1.15rem;display:inline-flex;align-items:center;justify-content:center;
+}
+.btn-circulo:hover{border-color:var(--marca);color:var(--marca)}
+
+/* ---------- 5. Secciones ---------- */
+.seccion{padding:64px 0;scroll-margin-top:76px}
+.seccion-cabecera{max-width:740px;margin-bottom:28px}
+.seccion-eyebrow{
+  margin:0 0 6px;color:var(--marca);
+  font-weight:800;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;
+}
+.seccion-cabecera h2{margin:0 0 8px;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em}
+.seccion-sub{margin:0;color:var(--texto-suave)}
+.con-accion{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:none}
+
+/* ---------- 6. Tabla comparativa ---------- */
+.tabla-scroll{
+  overflow-x:auto;
+  border:1px solid var(--borde);border-radius:var(--radio);
+  background:var(--panel);box-shadow:var(--sombra);
+}
+table{border-collapse:collapse;width:100%;min-width:900px;font-size:.94rem}
+th{
+  text-align:left;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--texto-suave);padding:12px 16px;
+  background:var(--panel-2);border-bottom:2px solid var(--borde);
+}
+td{padding:12px 16px;border-bottom:1px solid var(--borde);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--panel-2)}
+.pill{
+  display:inline-block;padding:3px 12px;border-radius:999px;
+  background:var(--acento-suave);color:var(--acento);
+  font-weight:700;font-size:.85rem;white-space:nowrap;
+}
+.celda-tags{min-width:220px}
+.tag{
+  display:inline-block;margin:2px 4px 2px 0;padding:2px 10px;
+  border-radius:8px;background:var(--acento-suave);color:var(--acento);
+  font-size:.78rem;font-weight:600;
+}
+.tabla-pie{margin:12px 4px 0;font-size:.88rem;color:var(--texto-suave)}
+
+/* ---------- 7. Fichas de lectura ---------- */
+.nota{
+  background:var(--panel);border:1px solid var(--borde);border-left:4px solid #f59e0b;
+  padding:12px 16px;border-radius:10px;
+  font-size:.92rem;color:var(--texto-suave);margin:0 0 20px;
+}
+.nota strong{color:var(--texto)}
+
+.fichas-lista{display:grid;gap:14px}
+.ficha{
+  background:var(--panel);
+  border:1px solid var(--borde);border-left:5px solid var(--acento);
+  border-radius:var(--radio);box-shadow:var(--sombra);
+  overflow:hidden;scroll-margin-top:86px;
+}
+.ficha-cabecera{
+  display:flex;align-items:center;gap:14px;width:100%;
+  padding:16px 18px;background:transparent;border:0;cursor:pointer;
+  font:inherit;color:inherit;text-align:left;
+}
+.ficha-cabecera:hover{background:var(--panel-2)}
+.ficha-clase{
+  font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--acento);background:var(--acento-suave);
+  padding:4px 10px;border-radius:999px;white-space:nowrap;
+}
+.ficha-titulo{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.ficha-autor{font-weight:700;font-size:1.05rem}
+.ficha-texto{color:var(--texto-suave);font-size:.9rem}
+.ficha-chev{color:var(--texto-suave);transition:transform .3s;flex:none}
+.ficha.abierta .ficha-chev{transform:rotate(180deg)}
+
+/* Acordeón animado con grid-template-rows */
+.ficha-cuerpo{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.ficha.abierta .ficha-cuerpo{grid-template-rows:1fr}
+.ficha-recorte{overflow:hidden;min-height:0}
+.ficha-contenido{padding:2px 22px 20px}
+
+.bloque{padding:14px 0;border-top:1px dashed var(--borde)}
+.bloque:first-child{border-top:none;padding-top:4px}
+.bloque h4{
+  margin:0 0 8px;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--acento);
+}
+.bloque p{margin:0}
+.conceptos{margin:0;display:grid;gap:12px}
+.conceptos dt{font-weight:700;margin-bottom:2px}
+.conceptos dd{margin:0;color:var(--texto-suave)}
+.bloque blockquote{
+  margin:0;padding:10px 16px;
+  border-left:3px solid var(--acento);background:var(--acento-suave);
+  border-radius:0 10px 10px 0;font-style:italic;
+}
+.ficha-nota{margin-top:14px;font-size:.82rem;color:var(--texto-suave)}
+
+/* ---------- 8. Preguntas tipo parcial ---------- */
+.preguntas-lista{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:preg}
+.preguntas-lista li{
+  counter-increment:preg;position:relative;
+  background:var(--panel);border:1px solid var(--borde);border-radius:var(--radio);
+  box-shadow:var(--sombra);padding:16px 18px 16px 66px;
+}
+.preguntas-lista li::before{
+  content:counter(preg,decimal-leading-zero);
+  position:absolute;left:18px;top:15px;
+  font-weight:800;font-size:1.15rem;color:var(--marca);
+}
+
+/* ---------- 9. Flashcards ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{
+  font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;
+  color:var(--texto-suave);background:var(--panel);
+  border:1px solid var(--borde);border-radius:999px;padding:7px 15px;transition:.15s;
+}
+.chip:hover{color:var(--marca);border-color:var(--marca)}
+.chip[data-filtro]:not([data-filtro="todos"]):hover{color:var(--acento);border-color:var(--acento)}
+.chip.activa{background:var(--acento,var(--marca));border-color:var(--acento,var(--marca));color:#fff}
+
+.flash-escena{perspective:1400px;max-width:680px;margin:0 auto}
+.flash-card{
+  position:relative;
+  height:clamp(300px,46vh,400px);
+  transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.2,.7,.3,1);
+  cursor:pointer;outline-offset:4px;
+}
+.flash-card:focus-visible{outline:3px solid var(--marca)}
+.flash-card.volteada{transform:rotateY(180deg)}
+.flash-cara{
+  position:absolute;inset:0;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  background:var(--panel);
+  border:1px solid var(--borde);border-top:6px solid var(--acento);
+  border-radius:18px;box-shadow:var(--sombra);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  padding:30px 34px;text-align:center;overflow:auto;
+}
+.flash-atras{transform:rotateY(180deg)}
+.flash-etiqueta{
+  font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--acento);background:var(--acento-suave);
+  padding:4px 12px;border-radius:999px;
+}
+.flash-dominada{
+  display:none;position:absolute;top:14px;right:16px;
+  background:var(--ok);color:#fff;
+  font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:999px;
+}
+.flash-card.sabida .flash-dominada{display:block}
+.flash-pregunta{margin:0;font-size:1.28rem;font-weight:700;max-width:34ch}
+.flash-respuesta{margin:0;font-size:1.06rem}
+.flash-pista{font-size:.8rem;color:var(--texto-suave)}
+
+.flash-pie{max-width:680px;margin:20px auto 0;display:grid;gap:14px;text-align:center}
+.flash-contador{font-weight:700;color:var(--texto-suave);font-variant-numeric:tabular-nums}
+.flash-botones{display:flex;justify-content:center;gap:10px}
+.flash-secundarios{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.flash-progreso{display:grid;gap:6px}
+.barra{
+  height:10px;border-radius:999px;overflow:hidden;
+  background:var(--panel-2);border:1px solid var(--borde);
+}
+.barra-relleno{
+  height:100%;width:0;border-radius:999px;
+  background:linear-gradient(90deg,var(--ok),#4ade80);
+  transition:width .3s;
+}
+#progreso-texto{font-size:.85rem;color:var(--texto-suave)}
+kbd{
+  background:var(--panel-2);border:1px solid var(--borde);border-bottom-width:2px;
+  border-radius:6px;padding:1px 7px;font-family:inherit;font-size:.8rem;
+}
+.flash-atajos{margin:0;font-size:.8rem;color:var(--texto-suave)}
+
+/* ---------- 10. Pie de página ---------- */
+.pie{border-top:1px solid var(--borde);padding:28px 0;color:var(--texto-suave);font-size:.88rem}
+.pie-inner{display:grid;gap:4px}
+.pie-inner p{margin:0}
+
+/* ---------- 11. Responsive ---------- */
+@media (max-width:720px){
+  .barra-inner{padding:10px 16px;gap:10px;flex-wrap:wrap}
+  .nav{order:3;width:100%;margin-left:0;justify-content:flex-start;overflow-x:auto}
+  .hero{padding:52px 0 48px}
+  .hero-stats{gap:22px}
+  .seccion{padding:48px 0}
+  .seccion-cabecera{margin-bottom:22px}
+  .ficha-cabecera{padding:14px}
+  .ficha-contenido{padding:2px 16px 16px}
+  .flash-card{height:clamp(300px,44vh,400px)}
+  .flash-cara{padding:22px 20px}
+  .flash-pregunta{font-size:1.12rem}
+  .flash-respuesta{font-size:.98rem}
+  .btn-circulo{width:42px;height:42px}
+}
+@media (hover:none){
+  .flash-atajos{display:none}
+}
+
+/* ---------- 12. Accesibilidad e impresión ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none !important;animation:none !important}
+  html{scroll-behavior:auto}
+}
+@media print{
+  .barra,.hero-acciones,#flashcards,.flash-atajos,.ficha-chev{display:none !important}
+  .ficha-cuerpo{grid-template-rows:1fr !important}
+  .ficha{break-inside:avoid;box-shadow:none}
+  body{background:#fff}
+}

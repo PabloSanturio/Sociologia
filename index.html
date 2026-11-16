@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parcial de Sociología · Guía de estudio y flashcards</title>
+  <meta name="description" content="Guía interactiva para preparar el parcial de Introducción a la Sociología: fichas de lectura de Marx, Weber, Parsons, Bourdieu, Beck, Aguirre y Batthyány y Castells, guía comparativa y 42 flashcards.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="salto" href="#fichas">Saltar al contenido</a>
+
+<!-- ================= BARRA DE NAVEGACIÓN ================= -->
+<header class="barra">
+  <div class="barra-inner">
+    <a class="logo" href="#inicio">📚 Sociología</a>
+    <nav class="nav" aria-label="Secciones de la página">
+      <a href="#inicio" data-seccion="inicio">Inicio</a>
+      <a href="#guia" data-seccion="guia">Guía rápida</a>
+      <a href="#fichas" data-seccion="fichas">Fichas</a>
+      <a href="#preguntas" data-seccion="preguntas">Preguntas</a>
+      <a href="#flashcards" data-seccion="flashcards">Flashcards</a>
+    </nav>
+    <button id="btn-tema" class="btn-tema" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema claro u oscuro">🌙</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= PORTADA ================= -->
+  <section id="inicio" class="hero">
+    <div class="contenedor">
+      <p class="hero-eyebrow">Introducción a la Sociología · 2.º semestre 2026</p>
+      <h1>Guía de estudio para el <span class="grad">parcial de Sociología</span></h1>
+      <p class="hero-sub">Todo el material del curso en una sola página: las fichas de lectura de los 7 autores, una tabla comparativa para repasar en minutos, preguntas tipo parcial y 42 flashcards para fijar los conceptos antes del examen.</p>
+
+      <div class="hero-stats">
+        <div><strong>7</strong><span>fichas de lectura</span></div>
+        <div><strong>21</strong><span>conceptos clave</span></div>
+        <div><strong>42</strong><span>flashcards</span></div>
+        <div><strong>8</strong><span>preguntas tipo parcial</span></div>
+      </div>
+
+      <div class="hero-chips" aria-label="Autores del curso">
+        <a class="hero-chip" data-autor="marx" href="#ficha-marx">Marx</a>
+        <a class="hero-chip" data-autor="weber" href="#ficha-weber">Weber</a>
+        <a class="hero-chip" data-autor="parsons" href="#ficha-parsons">Parsons</a>
+        <a class="hero-chip" data-autor="bourdieu" href="#ficha-bourdieu">Bourdieu</a>
+        <a class="hero-chip" data-autor="beck" href="#ficha-beck">Beck</a>
+        <a class="hero-chip" data-autor="aguirre" href="#ficha-aguirre">Aguirre y Batthyány</a>
+        <a class="hero-chip" data-autor="castells" href="#ficha-castells">Castells</a>
+      </div>
+
+      <div class="hero-acciones">
+        <a class="btn btn-primario" href="#fichas">Leer las fichas</a>
+        <a class="btn btn-fantasma" href="#flashcards">🃏 Estudiar con flashcards</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GUÍA RÁPIDA ================= -->
+  <section id="guia" class="seccion">
+    <div class="contenedor">
+      <header class="seccion-cabecera">
+        <p class="seccion-eyebrow">Repaso express</p>
+        <h2>Los 7 autores en una tabla</h2>
+        <p class="seccion-sub">Si tenés poco tiempo, esta tabla resume el recorrido del curso: quién es cada autor, qué texto se leyó, desde qué corriente se lo lee y qué conceptos tenés que poder citar en el parcial.</p>
+      </header>
+
+      <div class="tabla-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Autor</th>
+              <th>Texto leído</th>
+              <th>Corriente</th>
+              <th>Idea en una frase</th>
+              <th>Conceptos para citar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-autor="marx">
+              <td><span class="pill">Marx</span></td>
+              <td>Contribución a la crítica de la economía política</td>
+              <td>Materialismo histórico</td>
+              <td>Las mercancías y el dinero no son solo cosas: expresan las relaciones sociales de la sociedad capitalista.</td>
+              <td class="celda-tags"><span class="tag">Valor de uso</span><span class="tag">Fetichismo de la mercancía</span><span class="tag">Dinero como intermediario</span></td>
+            </tr>
+            <tr data-autor="weber">
+              <td><span class="pill">Weber</span></td>
+              <td>Economía y sociedad</td>
+              <td>Sociología comprensiva</td>
+              <td>La sociedad moderna se racionaliza: la vida se organiza según cálculo, reglas y fines, y el mundo se “desencanta”.</td>
+              <td class="celda-tags"><span class="tag">Acción social</span><span class="tag">Tipos de dominación</span><span class="tag">Racionalización</span></td>
+            </tr>
+            <tr data-autor="parsons">
+              <td><span class="pill">Parsons</span></td>
+              <td>El sistema social</td>
+              <td>Estructural-funcionalismo</td>
+              <td>El orden social se sostiene en valores compartidos, institucionalizados en roles e internalizados en la personalidad.</td>
+              <td class="celda-tags"><span class="tag">Sistema social</span><span class="tag">AGIL</span><span class="tag">Institucionalización e internalización</span></td>
+            </tr>
+            <tr data-autor="bourdieu">
+              <td><span class="pill">Bourdieu</span></td>
+              <td>Poder, derecho y clases sociales</td>
+              <td>Sociología crítica</td>
+              <td>Las clases no existen ya formadas: se construyen en el espacio social y necesitan representación para existir.</td>
+              <td class="celda-tags"><span class="tag">Espacio social</span><span class="tag">Capitales</span><span class="tag">Poder simbólico</span></td>
+            </tr>
+            <tr data-autor="beck">
+              <td><span class="pill">Beck</span></td>
+              <td>La sociedad del riesgo. Hacia una nueva modernidad</td>
+              <td>Modernidad reflexiva</td>
+              <td>La modernidad ya no reparte solo riqueza: reparte riesgos fabricados por su propio desarrollo técnico.</td>
+              <td class="celda-tags"><span class="tag">Sociedad del riesgo</span><span class="tag">Efecto bumerang</span><span class="tag">Comunidad del miedo</span></td>
+            </tr>
+            <tr data-autor="aguirre">
+              <td><span class="pill">Aguirre y Batthyány</span></td>
+              <td>«Género, familias y trabajo: rupturas y continuidades» (Introducción)</td>
+              <td>Sociología del género</td>
+              <td>Las mujeres se incorporaron al empleo, pero el trabajo doméstico y de cuidado siguió recayendo en ellas.</td>
+              <td class="celda-tags"><span class="tag">División sexual del trabajo</span><span class="tag">Trabajo no remunerado</span><span class="tag">Desigualdades de género</span></td>
+            </tr>
+            <tr data-autor="castells">
+              <td><span class="pill">Castells</span></td>
+              <td>Panorama de la era de la información</td>
+              <td>Informacionalismo / sociedad red</td>
+              <td>El capitalismo informacional global excluye a gran parte de la población y debilita a los Estados nacionales.</td>
+              <td class="celda-tags"><span class="tag">Informacionalismo</span><span class="tag">Globalización</span><span class="tag">Estado-red</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tabla-pie">Orden del curso: Marx (clase 2) → Weber (clase 3) → Parsons (clase 4) → Bourdieu (clase 5) → Beck (clase 7) → Aguirre y Batthyány (clase 8) → Castells (noviembre).</p>
+    </div>
+  </section>
+
+  <!-- ================= FICHAS DE LECTURA ================= -->
+  <section id="fichas" class="seccion">
+    <div class="contenedor">
+      <header class="seccion-cabecera con-accion">
+        <div>
+          <p class="seccion-eyebrow">Fichas de lectura</p>
+          <h2>Los 7 autores, ficha por ficha</h2>
+          <p class="seccion-sub">Cada ficha reúne la idea central del texto, los conceptos clave con su definición, el vínculo con la realidad actual y la pregunta que disparó la lectura.</p>
+        </div>
+        <button id="btn-todas" class="btn btn-fantasma">Abrir todas</button>
+      </header>
+
+      <p class="nota">✍️ <strong>Nota:</strong> las fichas de <strong>Weber</strong> y <strong>Parsons</strong> fueron redactadas para esta guía (no estaban entre las entregadas). En la ficha de <strong>Aguirre y Batthyány</strong> se completó la idea central y se diferenciaron las definiciones de los conceptos, que estaban repetidas en la ficha original.</p>
+
+      <div class="fichas-lista">
+
+        <!-- ============ MARX ============ -->
+        <article class="ficha abierta" data-autor="marx" id="ficha-marx">
+          <button class="ficha-cabecera" aria-expanded="true" aria-controls="cuerpo-marx">
+            <span class="ficha-clase">Clase 2 · 31/08</span>
+            <span class="ficha-titulo">
+              <span class="ficha-autor">Karl Marx</span>
+              <span class="ficha-texto">Contribución a la crítica de la economía política</span>
+            </span>
+            <span class="ficha-chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="ficha-cuerpo" id="cuerpo-marx">
+            <div class="ficha-recorte">
+              <div class="ficha-contenido">
+                <div class="bloque">
+                  <h4>📌 Idea central</h4>
+                  <p>Marx plantea que las mercancías y el dinero no son solo cosas u objetos materiales: son también expresiones de las relaciones sociales y del modo en que las personas se organizan en esa sociedad, que es capitalista.</p>
+                </div>
+                <div class="bloque">
+                  <h4>🔑 Conceptos clave</h4>
+                  <dl class="conceptos">
+                    <div><dt>Valor de uso</dt><dd>Es lo útil que es algo para mí en el día a día, cuánto valor representa para mis necesidades concretas.</dd></div>
+                    <div><dt>Fetichismo de la mercancía</dt><dd>Es la ilusión, propia del sistema capitalista, de que las relaciones sociales entre las personas parecen relaciones entre cosas: la relación que hay entre el dinero y la mercancía.</dd></div>
+                    <div><dt>El dinero como intermediario</dt><dd>El dinero funciona como la herramienta que conecta a todos y a todo. Transforma el trabajo que la gente hace en un número que tiene un valor económico y que se puede comprar y vender.</dd></div>
+                  </dl>
+                </div>
+                <div class="bloque">
+                  <h4>🌎 Vínculo con la realidad</h4>
+                  <p>En las redes sociales, los youtubers y creadores no entregan su trabajo y contenido a cambio de bienes, ropa o comida: su tiempo invertido se traduce en visitas, patrocinios y suscriptores, y de ahí deducen el dinero. El dinero actúa como el puente que traduce el tiempo y el esfuerzo de crear contenido (y el entretenimiento de la gente) en algo con lo que pueden pagar sus cuentas o compras.</p>
+                </div>
+                <div class="bloque">
+                  <h4>❓ Pregunta que generó la lectura</h4>
+                  <blockquote>¿Por qué trabajamos tantas horas para conseguir dinero y comprar cosas, en lugar de conectar directamente con el trabajo de los demás y con lo que realmente necesitamos?</blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ WEBER ============ -->
+        <article class="ficha" data-autor="weber" id="ficha-weber">
+          <button class="ficha-cabecera" aria-expanded="false" aria-controls="cuerpo-weber">
+            <span class="ficha-clase">Clase 3 · 14/09</span>
+            <span class="ficha-titulo">
+              <span class="ficha-autor">Max Weber</span>
+              <span class="ficha-texto">Economía y sociedad</span>
+            </span>
+            <span class="ficha-chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="ficha-cuerpo" id="cuerpo-weber">
+            <div class="ficha-recorte">
+              <div class="ficha-contenido">
+                <div class="bloque">
+                  <h4>📌 Idea central</h4>
+                  <p>Para Weber, la sociología debe comprender el sentido subjetivo que las personas dan a sus acciones (la <em>acción social</em>). En la sociedad moderna ese sentido se organiza cada vez más según la racionalidad: el cálculo, la eficiencia y las reglas formales. Ese proceso —la racionalización— tiene su expresión más clara en la burocracia y produce un “desencantamiento del mundo”.</p>
+                </div>
+                <div class="bloque">
+                  <h4>🔑 Conceptos clave</h4>
+                  <dl class="conceptos">
+                    <div><dt>Acción social</dt><dd>Toda conducta que tiene un sentido para quien la realiza y está orientada por la acción de los demás. Es la unidad básica de la sociología comprensiva: no basta con describir la conducta, hay que interpretar su sentido.</dd></div>
+                    <div><dt>Tipos de dominación legítima</dt><dd>Weber distingue tres formas en que el poder se vuelve legítimo: la dominación legal-racional (obediencia a normas e instrucciones impersonales, típica del Estado burocrático moderno), la tradicional (basada en costumbres heredadas) y la carismática (basada en las cualidades excepcionales de un líder).</dd></div>
+                    <div><dt>Racionalización y desencantamiento del mundo</dt><dd>Proceso por el cual la vida social se organiza según el cálculo y las reglas formales, desplazando las explicaciones religiosas y mágicas. El mundo se vuelve previsible y administrado, pero pierde su “encanto”.</dd></div>
+                  </dl>
+                </div>
+                <div class="bloque">
+                  <h4>🌎 Vínculo con la realidad</h4>
+                  <p>Renovar el documento en una oficina pública: uno es atendido por número de turno y según requisitos impersonales, no por quién es ni por sus relaciones personales. La burocracia aplica reglas “iguales para todos” —eso es racionalización—, pero también puede volverse una “jaula de hierro” de formularios y trámites.</p>
+                </div>
+                <div class="bloque">
+                  <h4>❓ Pregunta que generó la lectura</h4>
+                  <blockquote>¿La racionalización nos hace más libres, al hacer la vida más predecible e igualitaria frente a las reglas, o encierra la vida cotidiana en una “jaula de hierro” de trámites, normas y controles?</blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ PARSONS ============ -->
+        <article class="ficha" data-autor="parsons" id="ficha-parsons">
+          <button class="ficha-cabecera" aria-expanded="false" aria-controls="cuerpo-parsons">
+            <span class="ficha-clase">Clase 4 · 28/09</span>
+            <span class="ficha-titulo">
+              <span class="ficha-autor">Talcott Parsons</span>
+              <span class="ficha-texto">El sistema social</span>
+            </span>
+            <span class="ficha-chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="ficha-cuerpo" id="cuerpo-parsons">
+            <div class="ficha-recorte">
+              <div class="ficha-contenido">
+                <div class="bloque">
+                  <h4>📌 Idea central</h4>
+                  <p>El orden social no es fruto del azar ni de la fuerza: es posible porque los miembros de una sociedad comparten valores y normas que se institucionalizan en roles y expectativas, y que cada persona internaliza mediante la socialización. La sociedad funciona así como un sistema cuyas partes contribuyen a su equilibrio y reproducción.</p>
+                </div>
+                <div class="bloque">
+                  <h4>🔑 Conceptos clave</h4>
+                  <dl class="conceptos">
+                    <div><dt>Sistema social</dt><dd>Red de interacciones entre actores, orientadas por normas y valores compartidos que se institucionalizan en roles (la conducta esperada de cada posición) y estatus (la posición que se ocupa).</dd></div>
+                    <div><dt>Esquema AGIL</dt><dd>Todo sistema, para subsistir, debe cumplir cuatro funciones: Adaptación (obtener recursos del entorno), consecución de Metas (definir y alcanzar objetivos), Integración (coordinar las partes) y Latencia (mantener los patrones de valores en el tiempo).</dd></div>
+                    <div><dt>Institucionalización e internalización</dt><dd>Las normas y valores se fijan en roles e instituciones (institucionalización) y, a la vez, son incorporados a la personalidad de los individuos mediante la socialización en la familia y la escuela (internalización). Así el orden se reproduce sin coerción permanente.</dd></div>
+                  </dl>
+                </div>
+                <div class="bloque">
+                  <h4>🌎 Vínculo con la realidad</h4>
+                  <p>La escuela: además de enseñar contenidos, forma en roles (alumno/docente), puntualidad, disciplina y valores compartidos. Los estudiantes internalizan esas normas y el sistema social se reproduce generación tras generación.</p>
+                </div>
+                <div class="bloque">
+                  <h4>❓ Pregunta que generó la lectura</h4>
+                  <blockquote>Si el modelo se centra en el consenso y el equilibrio, ¿cómo explica la sociología de Parsons los conflictos, las revoluciones y los movimientos sociales que impulsan cambios profundos?</blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ BOURDIEU ============ -->
+        <article class="ficha" data-autor="bourdieu" id="ficha-bourdieu">
+          <button class="ficha-cabecera" aria-expanded="false" aria-controls="cuerpo-bourdieu">
+            <span class="ficha-clase">Clase 5 · 05/10</span>
+            <span class="ficha-titulo">
+              <span class="ficha-autor">Pierre Bourdieu</span>
+              <span class="ficha-texto">Poder, derecho y clases sociales</span>
+            </span>
+            <span class="ficha-chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="ficha-cuerpo" id="cuerpo-bourdieu">
+            <div class="ficha-recorte">
+              <div class="ficha-contenido">
+                <div class="bloque">
+                  <h4>📌 Idea central</h4>
+                  <p>Las clases sociales no existen simplemente como grupos ya formados: se construyen a partir de las diferencias económicas, culturales y sociales entre las personas. Además, para que una clase llegue a existir como grupo real, hace falta que las personas se reconozcan como parte de ella y que exista una representación que pueda hablar en su nombre.</p>
+                </div>
+                <div class="bloque">
+                  <h4>🔑 Conceptos clave</h4>
+                  <dl class="conceptos">
+                    <div><dt>Espacio social</dt><dd>Es la forma en que el autor explica que las personas ocupan distintas posiciones dentro de la sociedad según los recursos y características que tienen (dinero, educación, relaciones y otros tipos de capital). Quienes están más cerca en este espacio suelen tener condiciones de vida y formas de pensar más parecidas.</dd></div>
+                    <div><dt>Capital económico y capital cultural</dt><dd>El capital económico tiene que ver con los recursos y bienes que posee una persona; el capital cultural, con la educación, los conocimientos y la formación. Ambos factores influyen mucho en la posición que una persona ocupa dentro de la sociedad.</dd></div>
+                    <div><dt>Poder simbólico</dt><dd>Es la capacidad de imponer una determinada forma de ver y clasificar la realidad. Cuando una persona o grupo consigue que su forma de definir a un grupo social sea aceptada por los demás, puede darle a ese grupo una existencia pública y reconocida.</dd></div>
+                  </dl>
+                </div>
+                <div class="bloque">
+                  <h4>🌎 Vínculo con la realidad</h4>
+                  <p>Dos personas pueden tener trabajos parecidos, pero si una tiene más estudios, mejores contactos y mayores recursos económicos, puede tener más oportunidades para conseguir determinados trabajos o acceder a ciertos lugares. La posición en el espacio social condiciona las oportunidades y las relaciones de cada persona.</p>
+                </div>
+                <div class="bloque">
+                  <h4>❓ Pregunta que generó la lectura</h4>
+                  <blockquote>¿Hasta qué punto las clases sociales representan diferencias que existen realmente en la sociedad y hasta qué punto son categorías que nosotros mismos construimos para ordenar y entender esas diferencias? ¿Cómo puede una categoría creada por la sociedad terminar teniendo efectos reales sobre las personas?</blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ BECK ============ -->
+        <article class="ficha" data-autor="beck" id="ficha-beck">
+          <button class="ficha-cabecera" aria-expanded="false" aria-controls="cuerpo-beck">
+            <span class="ficha-clase">Clase 7 · 19/10</span>
+            <span class="ficha-titulo">
+              <span class="ficha-autor">Ulrich Beck</span>
+              <span class="ficha-texto">La sociedad del riesgo. Hacia una nueva modernidad</span>
+            </span>
+            <span class="ficha-chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="ficha-cuerpo" id="cuerpo-beck">
+            <div class="ficha-recorte">
+              <div class="ficha-contenido">
+                <div class="bloque">
+                  <h4>📌 Idea central</h4>
+                  <p>En la modernidad avanzada, la sociedad transitó de una lógica de reparto de la riqueza —centrada en la escasez material y las clases sociales— hacia una lógica de reparto de los riesgos, enfocada en los peligros invisibles y globales producidos por el propio desarrollo científico-técnico. Las desigualdades tradicionales empiezan a ser sustituidas por amenazas colectivas y universales (contaminación, catástrofes ecológicas), y la búsqueda de seguridad se convierte en el nuevo motor político y social.</p>
+                </div>
+                <div class="bloque">
+                  <h4>🔑 Conceptos clave</h4>
+                  <dl class="conceptos">
+                    <div><dt>Sociedad del riesgo</dt><dd>Es la etapa actual, en la que el principal problema ya no es la falta de recursos o la pobreza material, sino la gestión de los peligros invisibles y globales (contaminación, daños ambientales) que la propia ciencia y tecnología crearon.</dd></div>
+                    <div><dt>Efecto bumerang</dt><dd>Es el fenómeno por el cual los riesgos y daños ambientales generados por la producción industrial (como las sustancias tóxicas) terminan afectando, tarde o temprano, a quienes los produjeron o se benefician de ellos, derribando las diferencias de clase.</dd></div>
+                    <div><dt>Comunidad del miedo</dt><dd>Es la unión colectiva que surge entre personas de diferentes sectores sociales a causa del temor compartido ante las amenazas globales y las catástrofes ambientales; reemplaza la solidaridad basada en la miseria o la clase social.</dd></div>
+                  </dl>
+                </div>
+                <div class="bloque">
+                  <h4>🌎 Vínculo con la realidad</h4>
+                  <p>Las olas de calor extremo y la sequía que afectan el suministro de agua potable en las ciudades: industrias y grandes ciudades producen contaminación y gases que alteran el clima global, pero esas mismas consecuencias climáticas terminan afectando a todos por igual, cortando el acceso al agua y dañando la calidad de vida de ricos y pobres.</p>
+                </div>
+                <div class="bloque">
+                  <h4>❓ Pregunta que generó la lectura</h4>
+                  <blockquote>Si las personas y los gobiernos ya conocen los graves peligros ambientales que causan, ¿por qué se sigue priorizando el crecimiento económico rápido a pesar de saber que eso destruye nuestro propio futuro?</blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ AGUIRRE Y BATTHYÁNY ============ -->
+        <article class="ficha" data-autor="aguirre" id="ficha-aguirre">
+          <button class="ficha-cabecera" aria-expanded="false" aria-controls="cuerpo-aguirre">
+            <span class="ficha-clase">Clase 8 · 26/10</span>
+            <span class="ficha-titulo">
+              <span class="ficha-autor">Rosario Aguirre y Karina Batthyány</span>
+              <span class="ficha-texto">«Género, familias y trabajo: rupturas y continuidades» (Introducción)</span>
+            </span>
+            <span class="ficha-chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="ficha-cuerpo" id="cuerpo-aguirre">
+            <div class="ficha-recorte">
+              <div class="ficha-contenido">
+                <div class="bloque">
+                  <h4>📌 Idea central</h4>
+                  <p>La incorporación masiva de las mujeres al trabajo remunerado transformó a las familias y al mundo del trabajo (ruptura), pero la organización del cuidado y de las tareas del hogar no acompañó ese cambio (continuidad): las responsabilidades domésticas y de cuidado siguen recayendo principalmente sobre las mujeres, lo que reproduce la desigualdad de género.</p>
+                </div>
+                <div class="bloque">
+                  <h4>🔑 Conceptos clave</h4>
+                  <dl class="conceptos">
+                    <div><dt>División sexual del trabajo</dt><dd>Es la manera en que se distribuyen socialmente las tareas entre mujeres y varones: a los varones se los asocia al trabajo productivo y remunerado, y a las mujeres, además del empleo, al trabajo doméstico y de cuidado. El resultado es una doble jornada para ellas.</dd></div>
+                    <div><dt>Trabajo no remunerado</dt><dd>Es el trabajo doméstico y de cuidados que sostiene la vida cotidiana y hace posible el funcionamiento de la economía, aunque no se pague ni siempre se contabilice como “trabajo”.</dd></div>
+                    <div><dt>Desigualdades de género</dt><dd>Son las diferencias de oportunidades, cargas y poder entre varones y mujeres que provienen de la organización social —no de la biología— y que se reproducen tanto dentro de la familia como en el mercado de trabajo.</dd></div>
+                  </dl>
+                </div>
+                <div class="bloque">
+                  <h4>🌎 Vínculo con la realidad</h4>
+                  <p>Cuando los hijos se enferman o no tienen clases, suele ser la madre quien debe faltar al trabajo para cuidarlos o reorganizar sus horarios. Las responsabilidades familiares siguen recayendo principalmente sobre las mujeres, lo que puede afectar sus oportunidades laborales y económicas.</p>
+                </div>
+                <div class="bloque">
+                  <h4>❓ Pregunta que generó la lectura</h4>
+                  <blockquote>Las mujeres se incorporaron cada vez más al mercado laboral, pero las tareas domésticas y de cuidado siguen recayendo sobre ellas. ¿Qué cambios sociales y qué políticas públicas serían necesarios para lograr una distribución más equitativa de esas responsabilidades?</blockquote>
+                </div>
+                <p class="ficha-nota">▸ Idea central y definiciones de los conceptos completadas para esta guía: en la ficha original faltaba la idea central y las tres definiciones estaban repetidas.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ CASTELLS ============ -->
+        <article class="ficha" data-autor="castells" id="ficha-castells">
+          <button class="ficha-cabecera" aria-expanded="false" aria-controls="cuerpo-castells">
+            <span class="ficha-clase">09/11</span>
+            <span class="ficha-titulo">
+              <span class="ficha-autor">Manuel Castells</span>
+              <span class="ficha-texto">Panorama de la era de la información</span>
+            </span>
+            <span class="ficha-chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="ficha-cuerpo" id="cuerpo-castells">
+            <div class="ficha-recorte">
+              <div class="ficha-contenido">
+                <div class="bloque">
+                  <h4>📌 Idea central</h4>
+                  <p>La globalización y el capitalismo informacional en América Latina generaron una profunda crisis económica, social y política, al excluir a gran parte de la población y debilitar a los Estados nacionales. Para que este proceso sea sostenible, se requiere transformar el modelo productivo, reformar las instituciones y reconstruir la participación de la sociedad mediante nuevos actores sociales.</p>
+                </div>
+                <div class="bloque">
+                  <h4>🔑 Conceptos clave</h4>
+                  <dl class="conceptos">
+                    <div><dt>Informacionalismo</dt><dd>Es el nuevo modelo de desarrollo económico y social donde la clave del éxito, la productividad y el poder ya no es solo la fuerza física o industrial, sino la capacidad de generar conocimiento y procesar información usando la tecnología.</dd></div>
+                    <div><dt>Globalización</dt><dd>Es el proceso que conecta a todo el planeta en tiempo real a través de redes de capital, mercados financieros, tecnología y comercio.</dd></div>
+                    <div><dt>Estado-red</dt><dd>Es la transformación del Estado tradicional ante las presiones de la globalización: deja de operar como estructura centralizada y soberana para pasar a formar parte de redes compartidas con otros actores.</dd></div>
+                  </dl>
+                </div>
+                <div class="bloque">
+                  <h4>🌎 Vínculo con la realidad</h4>
+                  <p>El impacto de los mercados financieros globales y la volatilidad económica internacional (inflación, crisis cambiarias) que sacuden de la noche a la mañana la economía local y afectan el empleo informal, tal como advierte el texto sobre los peligros del capitalismo desregulado.</p>
+                </div>
+                <div class="bloque">
+                  <h4>❓ Pregunta que generó la lectura</h4>
+                  <blockquote>¿Cómo pueden los países de América Latina fortalecer su educación y tecnología para no quedar permanentemente excluidos de la economía global, sin perder su soberanía ni descuidar a los sectores sociales más vulnerables?</blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PREGUNTAS TIPO PARCIAL ================= -->
+  <section id="preguntas" class="seccion">
+    <div class="contenedor">
+      <header class="seccion-cabecera">
+        <p class="seccion-eyebrow">Entrenamiento</p>
+        <h2>Preguntas tipo parcial</h2>
+        <p class="seccion-sub">Preguntas de desarrollo y comparación en el estilo típico de un parcial de Introducción a la Sociología. Practicá respondiéndolas por escrito, en 10–15 minutos cada una.</p>
+      </header>
+
+      <ol class="preguntas-lista">
+        <li><strong>Comparar el concepto de clase social en Marx y en Bourdieu:</strong> ¿qué define a una clase en cada autor, cómo se forma y qué papel juegan la conciencia y la representación de sus miembros?</li>
+        <li><strong>Weber distingue cuatro tipos de acción social</strong> (racional con arreglo a fines, racional con arreglo a valores, afectiva y tradicional). Definí cada uno y dale un ejemplo cotidiano.</li>
+        <li><strong>¿Qué es la racionalización para Weber?</strong> Explicá su relación con la burocracia y con el “desencantamiento del mundo”.</li>
+        <li><strong>Explicá el esquema AGIL de Parsons</strong> y aplicalo a una institución concreta (la escuela, un hospital, la familia).</li>
+        <li><strong>Beck: ¿en qué se diferencian la “lógica del reparto de la riqueza” y la “lógica del reparto de los riesgos”?</strong> ¿En qué sentido los riesgos son “democráticos”?</li>
+        <li><strong>Definí el efecto bumerang y la comunidad del miedo</strong> e ilustralos con un ejemplo ambiental actual.</li>
+        <li><strong>Según Aguirre y Batthyány, ¿por qué la incorporación masiva de las mujeres al empleo no eliminó la desigualdad de género?</strong> Usá los conceptos de división sexual del trabajo y trabajo no remunerado.</li>
+        <li><strong>¿Qué es el informacionalismo para Castells y qué consecuencias tiene</strong> para los Estados nacionales y la desigualdad en América Latina?</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= FLASHCARDS ================= -->
+  <section id="flashcards" class="seccion">
+    <div class="contenedor">
+      <header class="seccion-cabecera">
+        <p class="seccion-eyebrow">Memoria activa</p>
+        <h2>Flashcards</h2>
+        <p class="seccion-sub">42 tarjetas con los conceptos de los 7 autores. Tocá la carta para voltearla, filtrá por autor y marcá “La sé” en las que ya dominás: tu progreso queda guardado en el navegador.</p>
+      </header>
+
+      <div class="chips" id="chips" role="group" aria-label="Filtrar flashcards por autor">
+        <button class="chip activa" data-filtro="todos">Todas</button>
+        <button class="chip" data-filtro="marx">Marx</button>
+        <button class="chip" data-filtro="weber">Weber</button>
+        <button class="chip" data-filtro="parsons">Parsons</button>
+        <button class="chip" data-filtro="bourdieu">Bourdieu</button>
+        <button class="chip" data-filtro="beck">Beck</button>
+        <button class="chip" data-filtro="aguirre">Aguirre y Batthyány</button>
+        <button class="chip" data-filtro="castells">Castells</button>
+      </div>
+
+      <div class="flash-escena">
+        <div class="flash-card" id="flash-card" data-acento="marx" role="button" tabindex="0" aria-label="Flashcard: tocá para voltear">
+          <div class="flash-cara flash-frente">
+            <span class="flash-dominada" id="flash-dominada">✓ Dominada</span>
+            <span class="flash-etiqueta" id="flash-etiqueta">Marx</span>
+            <p class="flash-pregunta" id="flash-pregunta">…</p>
+            <span class="flash-pista">Tocá la carta para ver la respuesta</span>
+          </div>
+          <div class="flash-cara flash-atras" aria-hidden="true">
+            <span class="flash-etiqueta" id="flash-etiqueta-atras">Marx</span>
+            <p class="flash-respuesta" id="flash-respuesta">…</p>
+            <span class="flash-pista">Tocá de nuevo para volver a la pregunta</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flash-pie">
+        <span class="flash-contador" id="flash-contador">1 / 42</span>
+
+        <div class="flash-botones">
+          <button class="btn btn-circulo" id="btn-prev" title="Anterior (flecha izquierda)" aria-label="Tarjeta anterior">←</button>
+          <button class="btn btn-primario" id="btn-voltear">Voltear</button>
+          <button class="btn btn-circulo" id="btn-next" title="Siguiente (flecha derecha)" aria-label="Tarjeta siguiente">→</button>
+        </div>
+
+        <div class="flash-secundarios">
+          <button class="btn btn-fantasma" id="btn-sabida">✓ La sé</button>
+          <button class="btn btn-fantasma" id="btn-barajar">🔀 Barajar</button>
+          <button class="btn btn-fantasma" id="btn-reiniciar">↺ Reiniciar progreso</button>
+        </div>
+
+        <div class="flash-progreso">
+          <div class="barra" role="progressbar" aria-label="Progreso de flashcards dominadas"><div class="barra-relleno" id="barra-relleno"></div></div>
+          <span id="progreso-texto">0 de 42 dominadas</span>
+        </div>
+
+        <p class="flash-atajos">Atajos de teclado: <kbd>←</kbd> anterior · <kbd>→</kbd> siguiente · <kbd>Espacio</kbd> voltear</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie-inner">
+    <p><strong>Guía de estudio · Introducción a la Sociología · 2026</strong></p>
+    <p>Armada a partir de las fichas de lectura de Pablo Santurio, con fichas complementarias de Weber y Parsons. Hecha solo con HTML, CSS y JavaScript.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
