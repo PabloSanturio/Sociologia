@@ -5,24 +5,41 @@
    ETAPA 3: tema claro/oscuro, acordeón, flashcards y navegación
    ================================================================ */
 
-/* ---------- 1. Datos: 42 flashcards hardcodeadas ---------- */
+/* ---------- 1. Datos: 53 flashcards hardcodeadas ---------- */
 const AUTORES = {
   marx: "Marx",
+  durkheim: "Durkheim",
   weber: "Weber",
   parsons: "Parsons",
   bourdieu: "Bourdieu",
   beck: "Beck",
   aguirre: "Aguirre y Batthyány",
-  castells: "Castells"
+  castells: "Castells",
+  sociologia: "Sociología"
 };
 
 const FLASHCARDS = [
+  /* --- El concepto de sociología (5) --- */
+  { a: "sociologia", f: "¿Qué es la sociología?", r: "La ciencia que estudia la vida social: las relaciones entre las personas, los grupos, las instituciones y las estructuras que organizan la convivencia. Explica lo social por causas sociales." },
+  { a: "sociologia", f: "¿Quién acuñó el término «sociología» y cuándo?", r: "Auguste Comte, en 1838. Antes la llamaba «física social»: buscaba una ciencia de la sociedad con los métodos de las ciencias naturales." },
+  { a: "sociologia", f: "¿Qué es el positivismo?", r: "La corriente fundada por Comte: aplicar el método científico (observar, comparar, explicar con leyes) al estudio de la sociedad, en lugar de la especulación filosófica." },
+  { a: "sociologia", f: "¿Quiénes son los tres clásicos fundadores y qué pregunta fundó cada uno?", r: "Marx (el conflicto y el capitalismo), Durkheim (los hechos sociales y la cohesión) y Weber (el sentido de la acción social y la racionalización)." },
+  { a: "sociologia", f: "¿Qué es la imaginación sociológica (C. Wright Mills)?", r: "La capacidad de conectar la biografía personal con la historia colectiva: ver que los problemas personales (troubles) reflejan cuestiones estructurales (issues)." },
+
   /* --- Marx (5) --- */
   { a: "marx", f: "¿Qué es el valor de uso?", r: "La utilidad que algo tiene para satisfacer necesidades en el día a día: cuánto vale un objeto para quien lo usa." },
   { a: "marx", f: "¿Qué es el fetichismo de la mercancía?", r: "La ilusión del sistema capitalista por la cual las relaciones sociales entre personas aparecen como relaciones entre cosas: entre el dinero y las mercancías." },
   { a: "marx", f: "¿Qué papel cumple el dinero como intermediario?", r: "Es la herramienta que conecta a todos y a todo: transforma el trabajo humano en un número con valor económico, que puede comprarse y venderse." },
   { a: "marx", f: "Idea central de Marx en «Contribución a la crítica de la economía política»", r: "Las mercancías y el dinero no son solo objetos materiales: expresan las relaciones sociales y el modo capitalista de organizar la sociedad." },
   { a: "marx", f: "Ejemplo: el dinero como intermediario en la economía de creadores de contenido", r: "El trabajo de un youtuber no se intercambia directamente por bienes: se traduce en visitas y suscriptores, y de ahí en dinero y patrocinios. El dinero es el puente que convierte tiempo y esfuerzo en algo vendible." },
+
+  /* --- Durkheim (6) --- */
+  { a: "durkheim", f: "¿Qué es un hecho social según Durkheim?", r: "Maneras de actuar, pensar y sentir exteriores al individuo y dotadas de poder coercitivo: se le imponen. Ejemplos: la lengua, la moda, la moral, el derecho, la moneda." },
+  { a: "durkheim", f: "¿Qué significa que los hechos sociales sean «exteriores y coercitivos»?", r: "Exteriores: existen antes de que nazcamos, independientemente de cada individuo. Coercitivos: se imponen aunque no los elijamos; si los ignoramos, quedamos excluidos o sancionados." },
+  { a: "durkheim", f: "¿Qué es la conciencia colectiva?", r: "El conjunto de creencias y sentimientos comunes a los miembros de una sociedad. Es más fuerte en las sociedades con solidaridad mecánica y se debilita con la división del trabajo." },
+  { a: "durkheim", f: "Solidaridad mecánica vs. solidaridad orgánica", r: "Mecánica: la cohesión nace de la semejanza (todos hacen lo mismo, sociedades tradicionales). Orgánica: nace de la división del trabajo y la interdependencia (todos dependen de todos, sociedades modernas)." },
+  { a: "durkheim", f: "¿Qué es la anomia?", r: "La falta o el debilitamiento de las normas: cuando la sociedad cambia muy rápido, las reglas pierden fuerza y los deseos individuales quedan sin límites ni dirección (Durkheim la vincula al suicidio anómico)." },
+  { a: "durkheim", f: "¿Por qué «El suicidio» es el ejemplo clave del método de Durkheim?", r: "Demostró que hasta el acto más individual e íntimo tiene causas sociales: las tasas de suicidio varían según la integración y la regulación de los grupos, no según la psicología de cada persona." },
 
   /* --- Weber (7) --- */
   { a: "weber", f: "¿Qué es la acción social según Weber?", r: "Toda conducta que tiene un sentido subjetivo para quien la realiza y está orientada por la acción de otros. Es la unidad básica de la sociología comprensiva." },
@@ -251,7 +268,7 @@ pintarTarjeta();
 
 /* ---------- 6. Navegación activa (scrollspy) ---------- */
 const enlaces = Array.from(document.querySelectorAll(".nav a[data-seccion]"));
-const secciones = ["inicio", "guia", "fichas", "preguntas", "flashcards"]
+const secciones = ["inicio", "sociologia", "guia", "fichas", "preguntas", "flashcards"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 
